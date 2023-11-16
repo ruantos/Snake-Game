@@ -8,5 +8,5 @@ def Tela(title="Jogo da cobrinha",
         screen.title(title)
         screen.setup(width=width, height=heigth)
         screen.bgcolor(background)
-        screen.exitonclick()
+        screen.tracer(0)
         return screen
