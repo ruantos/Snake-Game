@@ -2,19 +2,25 @@ from turtle import Turtle
 
 passo = 20
 
-class Cobra:
-    def __init__(self, size):
+class Snake:
+    def __init__(self, size, color="black"):
         self.corpo = []
-        self.criar(size)
+        self.size = size
+        self.color = color
+        self.criar()
         self.head = self.corpo[0]
 
-    def criar(self, size, color="black"):
-        for i in range(size):
-            segmento = Turtle(shape="square")
-            segmento.color(color)
-            segmento.penup()
+    def add(self):
+        segmento = Turtle(shape="square")
+        segmento.color(self.color)
+        segmento.penup()
+        self.corpo.append(segmento)
+        return segmento
+
+    def criar(self):
+        for i in range(self.size):
+            segmento = self.add()
             segmento.goto(-20*i, 0)
-            self.corpo.append(segmento)
 
     def mover(self):
         for segmento in range(len(self.corpo) -1, 0 , -1):
