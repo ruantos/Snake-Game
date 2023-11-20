@@ -52,8 +52,6 @@ class Cobra:
             return True
     
     def bdcolisao(self):
-        for segmento in self.corpo:
-            if segmento == self.head:
-                pass
-            elif self.head.distance(segmento) < 10:
+        for segmento in self.corpo[1:]:
+            if self.head.distance(segmento) < 10:
                 return True
