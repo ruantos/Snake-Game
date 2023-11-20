@@ -3,7 +3,7 @@ from turtle import Turtle
 passo = 20
 
 class Cobra:
-    def __init__(self, size, color="black"):
+    def __init__(self, size, color="white"):
         self.corpo = []
         self.size = size
         self.color = color
@@ -23,7 +23,7 @@ class Cobra:
             segmento = self.add()
             segmento.goto(-20*i, 0)
 
-    def mover(self):
+    def move(self):
         for segmento in range(len(self.corpo) -1, 0 , -1):
             x = self.corpo[segmento -1].xcor()
             y = self.corpo[segmento -1].ycor()
@@ -45,3 +45,7 @@ class Cobra:
     def down(self):
         if self.head.heading() != 90:
            self.head.setheading(270)
+
+    def colisao(self):
+        if self.head.xcor() > 320 or self.head.xcor() < -320 or self.head.ycor() > 320 or self.head.ycor() < -320:
+            return True

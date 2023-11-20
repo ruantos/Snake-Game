@@ -15,7 +15,7 @@ on = True
 while on:
     tela.update()
     time.sleep(0.06)
-    cobra.mover()
+    cobra.move()
     tela.onkey(cobra.up, "w")
     tela.onkey(cobra.down, "s")
     tela.onkey(cobra.left, "a")
@@ -24,3 +24,9 @@ while on:
         fruta.move()
         cobra.add()
         placar.add()
+    if cobra.colisao():
+        on = False
+        placar.over()
+
+
+tela.exitonclick()
