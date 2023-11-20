@@ -1,10 +1,12 @@
-from snake import Snake
+from snake import Cobra
 from screen import Tela
+from fruit import Fruta
 import time
 
-cobra = Snake(3)
-
+cobra = Cobra(3)
 tela = Tela()
+fruta = Fruta
+
 tela.update()
 tela.listen()
 
@@ -17,6 +19,8 @@ while on:
     tela.onkey(cobra.down, "s")
     tela.onkey(cobra.left, "a")
     tela.onkey(cobra.right, "d")
+    if cobra.head.distance(fruta) < 15:
+        fruta.move()
 
 
 tela.exitonclick()

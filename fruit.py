@@ -1,7 +1,7 @@
 from turtle import Turtle
 from random import randint
 
-class Fruit(Turtle):
+class Fruta(Turtle):
     def __init__(self) -> None:
         super().__init__()
         self.shape("circle")

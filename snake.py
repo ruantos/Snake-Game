@@ -2,7 +2,7 @@ from turtle import Turtle
 
 passo = 20
 
-class Snake:
+class Cobra:
     def __init__(self, size):
         self.corpo = []
         self.criar(size)
