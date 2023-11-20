@@ -24,7 +24,7 @@ while on:
         fruta.move()
         cobra.add()
         placar.add()
-    if cobra.colisao():
+    if cobra.colisao() or cobra.bdcolisao():
         on = False
         placar.over()
 

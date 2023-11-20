@@ -14,8 +14,9 @@ class Cobra:
         segmento = Turtle(shape="square")
         segmento.color(self.color)
         segmento.penup()
+        if len(self.corpo) > 2:
+            segmento.goto(self.corpo[-1].position())
         self.corpo.append(segmento)
-
         return segmento
 
     def criar(self):
@@ -49,3 +50,10 @@ class Cobra:
     def colisao(self):
         if self.head.xcor() > 320 or self.head.xcor() < -320 or self.head.ycor() > 320 or self.head.ycor() < -320:
             return True
+    
+    def bdcolisao(self):
+        for segmento in self.corpo:
+            if segmento == self.head:
+                pass
+            elif self.head.distance(segmento) < 10:
+                return True
