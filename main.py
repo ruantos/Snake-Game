@@ -1,23 +1,22 @@
-""" Snake Game """
-
-from turtle import Turtle, Screen
+from snake import Snake
 from screen import Tela
-from body import Criar
-from move import Mover
-tela = Tela()
-cobra = Criar()
-tela.update()
+import time
 
+cobra = Snake(3)
+
+tela = Tela()
+tela.update()
+tela.listen()
 
 on = True
 while on:
-    tecla = tela.listen()
-    Mover(cobra, tela, tecla)
+    tela.update()
+    time.sleep(0.1)
+    cobra.mover()
+    tela.onkey(cobra.up, "w")
+    tela.onkey(cobra.down, "s")
+    tela.onkey(cobra.left, "a")
+    tela.onkey(cobra.right, "d")
 
 
 tela.exitonclick()
-
-
-
-
-
