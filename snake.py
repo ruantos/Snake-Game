@@ -2,7 +2,7 @@ from turtle import Turtle
 
 passo = 20
 
-class Snake:
+class Cobra:
     def __init__(self, size, color="black"):
         self.corpo = []
         self.size = size
@@ -15,6 +15,7 @@ class Snake:
         segmento.color(self.color)
         segmento.penup()
         self.corpo.append(segmento)
+        
         return segmento
 
     def criar(self):

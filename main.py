@@ -13,7 +13,7 @@ tela.listen()
 on = True
 while on:
     tela.update()
-    time.sleep(0.6)
+    time.sleep(0.06)
     cobra.mover()
     tela.onkey(cobra.up, "w")
     tela.onkey(cobra.down, "s")
@@ -21,7 +21,7 @@ while on:
     tela.onkey(cobra.right, "d")
     if cobra.head.distance(fruta) < 15:
         fruta.move()
-        
+
 
 
 tela.exitonclick()
