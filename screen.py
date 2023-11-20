@@ -1,4 +1,19 @@
-from turtle import Screen
+from turtle import Screen, Turtle
+
+class Score(Turtle):
+        def __init__(self):
+                super().__init__()
+                self.pontos = 0
+                self.hideturtle()
+                self.penup()
+                self.goto(0, 300)
+                self.write(arg=f"Pontuação: {self.pontos}",
+                           move=False,
+                           align="Center",
+                           font=("Arial", 14, "bold")
+                           )
+
+
 
 def Tela(title="Jogo da cobrinha",
         width=700,

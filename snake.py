@@ -15,7 +15,7 @@ class Cobra:
         segmento.color(self.color)
         segmento.penup()
         self.corpo.append(segmento)
-        
+
         return segmento
 
     def criar(self):
