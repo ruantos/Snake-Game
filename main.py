@@ -22,5 +22,4 @@ while on:
     tela.onkey(cobra.right, "d")
     if cobra.head.distance(fruta) < 15:
         fruta.move()
-        placar.pontos += 1 
-
+        placar.add()
