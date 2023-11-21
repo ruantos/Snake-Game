@@ -55,3 +55,10 @@ class Cobra:
         for segmento in self.corpo[1:]:
             if self.head.distance(segmento) < 10:
                 return True
+            
+    def reset(self):
+        for segmento in self.corpo:
+            segmento.goto(1000, 1000)
+        self.corpo.clear()
+        self.criar()
+        self.head = self.corpo[0]
