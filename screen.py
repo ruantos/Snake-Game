@@ -34,17 +34,18 @@ class Score(Turtle):
         
 class Over(Turtle):
     def __init__(self):
+        super().__init__()
+        self.hideturtle()
         self.goto(0, 0)
         self.penup()
-        self.hideturtle()
+        self.color("white")
 
-    def over(self, pontos):
-        self.write(arg=f"GAME OVER\n\nSUA PONTUAÇÃO: {pontos}",
+    def over(self):
+        self.write(arg=f"GAME OVER",
                 move=False,
                 align="Center",
                 font=("Arial", 20, "bold"))
-        time.sleep(3)
-        self.undo()
+
 
 def Tela(title="Jogo da cobrinha",
     width=700,

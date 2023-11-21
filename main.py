@@ -27,6 +27,10 @@ while on:
         placar.add()
     if cobra.colisao() or cobra.bdcolisao():
         over.over()
+        tela.update()
+        over.undo()
+        time.sleep(3)
+        
         placar.reset()
         cobra.reset()
 
