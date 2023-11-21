@@ -1,10 +1,11 @@
 from snake import Cobra
-from screen import Tela, Score
+from screen import Tela, Score, Over
 from fruit import Fruta
 import time
 
 cobra = Cobra(3)
 tela = Tela()
+over = Over()
 fruta = Fruta()
 placar = Score()
 
@@ -25,8 +26,9 @@ while on:
         cobra.add()
         placar.add()
     if cobra.colisao() or cobra.bdcolisao():
-        on = False
-        placar.over()
+        over.over()
+        placar.reset()
+        cobra.reset()
 
 
 tela.exitonclick()
