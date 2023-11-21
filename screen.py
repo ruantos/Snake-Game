@@ -2,7 +2,7 @@ from turtle import Screen, Turtle
 import time
 
 class Score(Turtle):
-    def __init__(self):
+    def __init__(self, over=False):
         super().__init__()
         self.color("white")
         self.pontos = 0
@@ -10,8 +10,11 @@ class Score(Turtle):
             self.max_pontos = int(file.read())
         self.hideturtle()
         self.penup()
-        self.goto(0, 300)
-        self.refresh()
+        if over:
+            self.goto(0, 0) 
+        else:
+            self.goto(0, 300)
+            self.refresh()
 
 
     def refresh(self):
@@ -34,21 +37,12 @@ class Score(Turtle):
         self.pontos = 0
         self.refresh()
 
-        
-class Over(Turtle):
-    def __init__(self):
-        super().__init__()
-        self.hideturtle()
-        self.goto(0, 0)
-        self.penup()
-        self.color("white")
-
     def over(self):
         self.write(arg=f"GAME OVER",
                 move=False,
                 align="Center",
                 font=("Arial", 20, "bold"))
-
+        
 
 def Tela(title="Jogo da cobrinha",
     width=700,

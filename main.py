@@ -1,13 +1,13 @@
 from snake import Cobra
-from screen import Tela, Score, Over
+from screen import Tela, Score
 from fruit import Fruta
 import time
 
 cobra = Cobra(3)
 tela = Tela()
-over = Over()
 fruta = Fruta()
 placar = Score()
+over = Score(True)
 
 tela.update()
 tela.listen()
@@ -30,7 +30,7 @@ while on:
         tela.update()
         over.undo()
         time.sleep(3)
-        
+
         placar.reset()
         cobra.reset()
 
