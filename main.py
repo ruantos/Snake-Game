@@ -12,6 +12,14 @@ over = Score(True)
 tela.update()
 tela.listen()
 
+over.goto(0, 10)
+while over.count > 0:
+    over.start()
+    tela.update()
+    time.sleep(1)
+    over.undo()
+over.goto(0, 0)
+
 on = True
 while on:
     tela.update()

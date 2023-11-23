@@ -5,11 +5,11 @@ class Score(Turtle):
     def __init__(self, over=False):
         super().__init__()
         self.color("white")
-        self.pontos = 0
-        with open("highscore.txt", mode="r") as file:
-            self.max_pontos = int(file.read())
-        self.hideturtle()
         self.penup()
+        self.hideturtle()
+        self.pontos = 0
+        self.max_pontos = self.get_highscore()
+        self.count = 3
         if over:
             self.goto(0, 0) 
         else:
@@ -17,6 +17,11 @@ class Score(Turtle):
             self.refresh()
 
 
+    def get_highscore(self):
+        with open("highscore.txt", mode="r") as file:
+            max_pontos = int(file.read())
+        return max_pontos
+     
     def refresh(self):
         self.write(arg=f"Pontuação: {self.pontos}    Max: {self.max_pontos}",
                 move=False,
@@ -43,6 +48,12 @@ class Score(Turtle):
                 align="Center",
                 font=("Arial", 20, "bold"))
         
+    def start(self):
+        self.write(arg=f"{self.count}",
+                move=False,
+                align="Center",
+                font=("Arial", 20, "bold"))
+        self.count -= 1
 
 def Tela(title="Jogo da cobrinha",
     width=700,
